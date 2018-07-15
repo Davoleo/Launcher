@@ -22,7 +22,6 @@ Partial Class List
     'Non modificarla mediante l'editor del codice.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(List))
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Button3 = New System.Windows.Forms.Button()
@@ -31,9 +30,9 @@ Partial Class List
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.PathList = New System.Windows.Forms.ListBox()
         Me.GameList = New System.Windows.Forms.ListBox()
+        Me.SymbolBox1 = New DevComponents.DotNetBar.Controls.SymbolBox()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -119,16 +118,6 @@ Partial Class List
         Me.Button4.Text = "Add Game"
         Me.Button4.UseVisualStyleBackColor = True
         '
-        'Button2
-        '
-        Me.Button2.BackgroundImage = CType(resources.GetObject("Button2.BackgroundImage"), System.Drawing.Image)
-        Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button2.Location = New System.Drawing.Point(411, 3)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(25, 24)
-        Me.Button2.TabIndex = 3
-        Me.Button2.UseVisualStyleBackColor = True
-        '
         'PathList
         '
         Me.PathList.FormattingEnabled = True
@@ -145,14 +134,27 @@ Partial Class List
         Me.GameList.Size = New System.Drawing.Size(190, 264)
         Me.GameList.TabIndex = 5
         '
+        'SymbolBox1
+        '
+        '
+        '
+        '
+        Me.SymbolBox1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.SymbolBox1.Location = New System.Drawing.Point(419, 0)
+        Me.SymbolBox1.Name = "SymbolBox1"
+        Me.SymbolBox1.Size = New System.Drawing.Size(20, 23)
+        Me.SymbolBox1.Symbol = ""
+        Me.SymbolBox1.TabIndex = 6
+        Me.SymbolBox1.Text = "SymbolBox1"
+        '
         'List
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(687, 287)
+        Me.ClientSize = New System.Drawing.Size(439, 287)
+        Me.Controls.Add(Me.SymbolBox1)
         Me.Controls.Add(Me.GameList)
         Me.Controls.Add(Me.PathList)
-        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.MaximizeBox = False
@@ -168,7 +170,6 @@ Partial Class List
 
     Friend WithEvents Button1 As Button
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents Button2 As Button
     Friend WithEvents PathList As ListBox
     Friend WithEvents Button4 As Button
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
@@ -178,4 +179,5 @@ Partial Class List
     Friend WithEvents Label2 As Label
     Friend WithEvents TextBoxX1 As DevComponents.DotNetBar.Controls.TextBoxX
     Friend WithEvents GameList As ListBox
+    Friend WithEvents SymbolBox1 As DevComponents.DotNetBar.Controls.SymbolBox
 End Class

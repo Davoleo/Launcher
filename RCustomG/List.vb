@@ -4,16 +4,6 @@
         Me.Hide()
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        If Panel1.Visible = True Then
-            Panel1.Hide()
-            Me.Width = "455"
-        Else
-            Panel1.Show()
-            Me.Width = "702"
-        End If
-    End Sub
-
     Private Sub List_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Panel1.Visible = False
         For Each Path In My.Settings.Paths
@@ -58,5 +48,15 @@
     Private Sub GameList_DoubleClick(sender As Object, e As EventArgs) Handles GameList.DoubleClick
         Shell = CreateObject("shell.application")
         Shell.open(PathList.SelectedItem.ToString)
+    End Sub
+
+    Private Sub SymbolBox1_Click(sender As Object, e As EventArgs) Handles SymbolBox1.Click
+        If Panel1.Visible = True Then
+            Panel1.Hide()
+            Me.Width = "455"
+        Else
+            Panel1.Show()
+            Me.Width = "702"
+        End If
     End Sub
 End Class

@@ -14,7 +14,6 @@
             Label1.ForeColor = Color.White
             x = 0
         End If
-        Print(ComboBoxEx1.SelectedIndex)
     End Sub
 
     Private Sub RomboButton_Click(sender As Object, e As EventArgs) Handles RomboButton.Click
@@ -62,12 +61,20 @@
     End Sub
 
     Private Sub DadiButton_Click(sender As Object, e As EventArgs) Handles DadiButton.Click
-        ComboBoxEx1.SelectedIndex = Convert.ToInt32(r.Next(0, ComboBoxEx1.Items.Count.ToString))
-        List.PathList.SelectedIndex = ComboBoxEx1.SelectedIndex + 1
+        ComboBoxEx1.SelectedIndex = Convert.ToInt32(r.Next(1, ComboBoxEx1.Items.Count.ToString))
     End Sub
 
     Private Sub LaunchButton_Click(sender As Object, e As EventArgs) Handles LaunchButton.Click
-        Shell1 = CreateObject("shell.application")
-        Shell1.open(List.PathList.SelectedItem.ToString)
+        Shell1 = CreateObject("shell.application", "runas")
+        Shell1.open(My.Settings.Paths(ComboBoxEx1.SelectedIndex).ToString)
+    End Sub
+
+
+    Private Sub ComboBoxEx1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxEx1.SelectedIndexChanged
+        Try
+            PictureBox1.Image = System.Drawing.Icon.ExtractAssociatedIcon(My.Settings.Paths(ComboBoxEx1.SelectedIndex).ToString).ToBitmap
+        Catch
+            MsgBox("Couldn't find the icon for the application selected in the ComboBox", MsgBoxStyle.Critical)
+        End Try
     End Sub
 End Class

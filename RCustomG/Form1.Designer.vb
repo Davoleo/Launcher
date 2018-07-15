@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Form1
     Inherits System.Windows.Forms.Form
 
     'Form esegue l'override del metodo Dispose per pulire l'elenco dei componenti.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Form1
     'NOTA: la procedura che segue è richiesta da Progettazione Windows Form
     'Può essere modificata in Progettazione Windows Form.  
     'Non modificarla mediante l'editor del codice.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
@@ -39,6 +39,8 @@ Partial Class Form1
         Me.ComboBoxEx1 = New DevComponents.DotNetBar.Controls.ComboBoxEx()
         Me.DadiButton = New System.Windows.Forms.Button()
         Me.LaunchButton = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'FioriButton
@@ -184,7 +186,7 @@ Partial Class Form1
         Me.ComboBoxEx1.ForeColor = System.Drawing.Color.ForestGreen
         Me.ComboBoxEx1.FormattingEnabled = True
         Me.ComboBoxEx1.ItemHeight = 16
-        Me.ComboBoxEx1.Location = New System.Drawing.Point(194, 134)
+        Me.ComboBoxEx1.Location = New System.Drawing.Point(194, 105)
         Me.ComboBoxEx1.Name = "ComboBoxEx1"
         Me.ComboBoxEx1.Size = New System.Drawing.Size(294, 22)
         Me.ComboBoxEx1.Style = DevComponents.DotNetBar.eDotNetBarStyle.OfficeXP
@@ -218,6 +220,16 @@ Partial Class Form1
         Me.LaunchButton.TabIndex = 13
         Me.LaunchButton.UseVisualStyleBackColor = False
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox1.Location = New System.Drawing.Point(287, 145)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(104, 81)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 14
+        Me.PictureBox1.TabStop = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 11.0!)
@@ -225,6 +237,7 @@ Partial Class Form1
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(666, 333)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.LaunchButton)
         Me.Controls.Add(Me.DadiButton)
         Me.Controls.Add(Me.ComboBoxEx1)
@@ -243,6 +256,7 @@ Partial Class Form1
         Me.MaximizeBox = False
         Me.Name = "Form1"
         Me.Text = "RCG "
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -263,4 +277,5 @@ Partial Class Form1
     Friend WithEvents ComboBoxEx1 As DevComponents.DotNetBar.Controls.ComboBoxEx
     Friend WithEvents DadiButton As Button
     Friend WithEvents LaunchButton As Button
+    Friend WithEvents PictureBox1 As PictureBox
 End Class
