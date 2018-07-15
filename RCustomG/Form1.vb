@@ -1,6 +1,8 @@
 ﻿Public Class Form1
     Dim x As Integer = 0
     Dim r As New System.Random
+    'Dim process As System.Diagnostics.Process = Nothing
+    'Dim processStartInfo As System.Diagnostics.ProcessStartInfo
     Private Property Shell1 As Object
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         x = x + 1
@@ -65,8 +67,35 @@
     End Sub
 
     Private Sub LaunchButton_Click(sender As Object, e As EventArgs) Handles LaunchButton.Click
-        Shell1 = CreateObject("shell.application", "runas")
-        Shell1.open(My.Settings.Paths(ComboBoxEx1.SelectedIndex).ToString)
+        Shell1 = CreateObject("shell.application")
+        If ComboBoxEx1.SelectedIndex < 0 Or ComboBoxEx1.SelectedIndex > ComboBoxEx1.Items.Count Then
+            Shell1.open(My.Settings.Paths(ComboBoxEx1.SelectedIndex))
+        Else
+            MsgBox("Invalid Game Selected!", MsgBoxStyle.Critical)
+        End If
+        'Shell1 = Shell("runas")
+
+        'processStartInfo = New System.Diagnostics.ProcessStartInfo()
+
+        'processStartInfo.FileName = List.OpenFileDialog1.FileName
+
+        'If System.Environment.OSVersion.Version.Major >= 6 Then ' Windows Vista or higher
+        '    ProcessStartInfo.Verb = "runas"
+        'Else
+        '    No need to prompt to run as admin
+        'End If
+
+        'Try
+        '    process = System.Diagnostics.Process.Start(processStartInfo)
+        'Catch ex As Exception
+        '    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        'Finally
+
+        '    If Not (process Is Nothing) Then
+        '        process.Dispose()
+        '    End If
+
+        'End Try
     End Sub
 
 

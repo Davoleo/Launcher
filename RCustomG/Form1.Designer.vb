@@ -253,6 +253,7 @@ Partial Class Form1
         Me.Controls.Add(Me.RomboButton5)
         Me.Controls.Add(Me.CuoriButton8)
         Me.Font = New System.Drawing.Font("CoffeeTin", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.MaximizeBox = False
         Me.Name = "Form1"
         Me.Text = "RCG "
