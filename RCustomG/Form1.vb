@@ -1,6 +1,7 @@
 ﻿Public Class Form1
     Dim x As Integer = 0
     Dim r As New System.Random
+    Private Property Shell1 As Object
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         x = x + 1
         If x = 1 Then
@@ -13,6 +14,7 @@
             Label1.ForeColor = Color.White
             x = 0
         End If
+        Print(ComboBoxEx1.SelectedIndex)
     End Sub
 
     Private Sub RomboButton_Click(sender As Object, e As EventArgs) Handles RomboButton.Click
@@ -61,9 +63,11 @@
 
     Private Sub DadiButton_Click(sender As Object, e As EventArgs) Handles DadiButton.Click
         ComboBoxEx1.SelectedIndex = Convert.ToInt32(r.Next(0, ComboBoxEx1.Items.Count.ToString))
+        List.PathList.SelectedIndex = ComboBoxEx1.SelectedIndex + 1
     End Sub
 
     Private Sub LaunchButton_Click(sender As Object, e As EventArgs) Handles LaunchButton.Click
-
+        Shell1 = CreateObject("shell.application")
+        Shell1.open(List.PathList.SelectedItem.ToString)
     End Sub
 End Class

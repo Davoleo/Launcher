@@ -1,4 +1,5 @@
 ﻿Public Class List
+    Private Property Shell As Object
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Me.Hide()
     End Sub
@@ -39,5 +40,23 @@
             GameList.Items.Add(TextBox1.Text)
             PathList.Items.Add(TextBoxX1.Text)
         End If
+    End Sub
+
+    Private Sub GameList_Click(sender As Object, e As EventArgs) Handles GameList.SelectedIndexChanged
+        PathList.SelectedIndex = GameList.SelectedIndex
+    End Sub
+
+    Private Sub PathList_Click(sender As Object, e As EventArgs) Handles PathList.SelectedIndexChanged
+        GameList.SelectedIndex = PathList.SelectedIndex
+    End Sub
+
+    Private Sub PathList_DoubleClick(sender As Object, e As EventArgs) Handles PathList.DoubleClick
+        Shell = CreateObject("shell.application")
+        Shell.open(PathList.SelectedItem.ToString)
+    End Sub
+
+    Private Sub GameList_DoubleClick(sender As Object, e As EventArgs) Handles GameList.DoubleClick
+        Shell = CreateObject("shell.application")
+        Shell.open(PathList.SelectedItem.ToString)
     End Sub
 End Class
