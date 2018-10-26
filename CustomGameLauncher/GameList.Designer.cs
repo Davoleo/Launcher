@@ -32,13 +32,14 @@
             this.listNames = new System.Windows.Forms.ListBox();
             this.listPaths = new System.Windows.Forms.ListBox();
             this.panelTools = new System.Windows.Forms.Panel();
-            this.btnHide = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnBrowse = new System.Windows.Forms.Button();
             this.txbPath = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txbName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.btnRemove = new System.Windows.Forms.Button();
             this.panelTools.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,7 +78,7 @@
             // panelTools
             // 
             this.panelTools.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.panelTools.Controls.Add(this.btnHide);
+            this.panelTools.Controls.Add(this.btnRemove);
             this.panelTools.Controls.Add(this.btnAdd);
             this.panelTools.Controls.Add(this.btnBrowse);
             this.panelTools.Controls.Add(this.txbPath);
@@ -90,23 +91,15 @@
             this.panelTools.TabIndex = 3;
             this.panelTools.Visible = false;
             // 
-            // btnHide
-            // 
-            this.btnHide.Location = new System.Drawing.Point(9, 252);
-            this.btnHide.Name = "btnHide";
-            this.btnHide.Size = new System.Drawing.Size(227, 23);
-            this.btnHide.TabIndex = 6;
-            this.btnHide.Text = "Close";
-            this.btnHide.UseVisualStyleBackColor = true;
-            // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(9, 223);
+            this.btnAdd.Location = new System.Drawing.Point(9, 218);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(227, 23);
             this.btnAdd.TabIndex = 5;
             this.btnAdd.Text = "Add Game";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnBrowse
             // 
@@ -116,6 +109,7 @@
             this.btnBrowse.TabIndex = 4;
             this.btnBrowse.Text = "Browse...";
             this.btnBrowse.UseVisualStyleBackColor = true;
+            this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
             // 
             // txbPath
             // 
@@ -151,6 +145,20 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Game Name:";
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // btnRemove
+            // 
+            this.btnRemove.Location = new System.Drawing.Point(9, 247);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(227, 23);
+            this.btnRemove.TabIndex = 7;
+            this.btnRemove.Text = "Remove Game";
+            this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
+            // 
             // GameList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -176,12 +184,13 @@
         private System.Windows.Forms.ListBox listNames;
         private System.Windows.Forms.ListBox listPaths;
         private System.Windows.Forms.Panel panelTools;
-        private System.Windows.Forms.Button btnHide;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnBrowse;
         private System.Windows.Forms.TextBox txbPath;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txbName;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Button btnRemove;
     }
 }

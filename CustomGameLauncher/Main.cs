@@ -43,7 +43,7 @@ namespace CustomGameLauncher
 
         private void symbolHelp_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("This application was written in C# by Davoleo AKA D36L" + Environment.NewLine + "Copyright - (c) - 2018 - D36L" + Environment.NewLine + Environment.NewLine + "Music: Babaman - Tentan di Fermarmi" + Environment.NewLine + Environment.NewLine + "Code and gfx: D36L", "Credits", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("This application was written in C# by Davoleo AKA D36L" + Environment.NewLine + "Copyright - (c) - 2018 - D36L" + Environment.NewLine + Environment.NewLine + "Music: Pinguini Tattici Nucleari - Pula" + Environment.NewLine + Environment.NewLine + "Code and gfx: D36L", "Credits", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void comboBoxGame_SelectedIndexChanged(object sender, EventArgs e)
@@ -70,7 +70,7 @@ namespace CustomGameLauncher
         private void btnFiori_Click(object sender, EventArgs e)
         {
             GameList listForm = new GameList();
-            listForm.Show();
+            listForm.ShowDialog();
         }
 
         private void btnCuori_Click(object sender, EventArgs e)
@@ -91,7 +91,17 @@ namespace CustomGameLauncher
 
         private void Main_Load(object sender, EventArgs e)
         {
-            //player.Play();
+            player.Play();
+
+            foreach (string name in Properties.Settings.Default.Games)
+                comboBoxGame.Items.Add(name);
+        }
+
+        private void symbolRefresh_Click(object sender, EventArgs e)
+        {
+            comboBoxGame.Items.Clear();
+            foreach (string name in Properties.Settings.Default.Games)
+                comboBoxGame.Items.Add(name);
         }
     }
 }

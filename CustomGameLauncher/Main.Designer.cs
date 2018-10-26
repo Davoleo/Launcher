@@ -46,6 +46,7 @@
             this.lblAddGame = new System.Windows.Forms.Label();
             this.lblMusic = new System.Windows.Forms.Label();
             this.timerTitle = new System.Windows.Forms.Timer(this.components);
+            this.symbolRefresh = new DevComponents.DotNetBar.Controls.SymbolBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureIcon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -236,6 +237,21 @@
             this.timerTitle.Interval = 500;
             this.timerTitle.Tick += new System.EventHandler(this.timerTitle_Tick);
             // 
+            // symbolRefresh
+            // 
+            this.symbolRefresh.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.symbolRefresh.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.symbolRefresh.Location = new System.Drawing.Point(0, 0);
+            this.symbolRefresh.Name = "symbolRefresh";
+            this.symbolRefresh.Size = new System.Drawing.Size(26, 23);
+            this.symbolRefresh.Symbol = "";
+            this.symbolRefresh.TabIndex = 18;
+            this.symbolRefresh.Text = "symbolBox1";
+            this.symbolRefresh.Click += new System.EventHandler(this.symbolRefresh_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -243,6 +259,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(674, 365);
+            this.Controls.Add(this.symbolRefresh);
             this.Controls.Add(this.lblMusic);
             this.Controls.Add(this.lblAddGame);
             this.Controls.Add(this.btnFiori);
@@ -286,6 +303,7 @@
         private System.Windows.Forms.Label lblAddGame;
         private System.Windows.Forms.Label lblMusic;
         private System.Windows.Forms.Timer timerTitle;
+        private DevComponents.DotNetBar.Controls.SymbolBox symbolRefresh;
     }
 }
 
