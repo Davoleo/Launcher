@@ -8,12 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Windows.Forms.VisualStyles;
 
 namespace CustomGameLauncher
 {
-    public partial class GameList : Form
+    public partial class ExecList : Form
     {
-        public GameList()
+        //public static Dictionary<string, string> execMap = new Dictionary<string, string>();
+
+        public ExecList()
         {
             InitializeComponent();
         }

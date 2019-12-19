@@ -34,7 +34,6 @@
             this.btnRandom = new System.Windows.Forms.Button();
             this.symbolHelp = new DevComponents.DotNetBar.Controls.SymbolBox();
             this.btnLaunch = new System.Windows.Forms.Button();
-            this.comboBoxGame = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.pictureIcon = new System.Windows.Forms.PictureBox();
             this.btnQuadri1 = new System.Windows.Forms.Button();
             this.btnQuadri5 = new System.Windows.Forms.Button();
@@ -47,6 +46,7 @@
             this.lblMusic = new System.Windows.Forms.Label();
             this.timerTitle = new System.Windows.Forms.Timer(this.components);
             this.symbolRefresh = new DevComponents.DotNetBar.Controls.SymbolBox();
+            this.comboBoxGame = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureIcon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,12 +54,12 @@
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lblTitle.Font = new System.Drawing.Font("CoffeeTin", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(130, 9);
+            this.lblTitle.Font = new System.Drawing.Font("Share Tech Mono", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(175, 9);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(427, 47);
+            this.lblTitle.Size = new System.Drawing.Size(335, 54);
             this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "GAME LAUNCHER";
+            this.lblTitle.Text = "DAV LAUNCHER";
             // 
             // btnRandom
             // 
@@ -104,21 +104,6 @@
             this.btnLaunch.TabIndex = 5;
             this.btnLaunch.UseVisualStyleBackColor = false;
             // 
-            // comboBoxGame
-            // 
-            this.comboBoxGame.DisplayMember = "Text";
-            this.comboBoxGame.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBoxGame.FocusHighlightColor = System.Drawing.Color.Red;
-            this.comboBoxGame.FormattingEnabled = true;
-            this.comboBoxGame.ItemHeight = 14;
-            this.comboBoxGame.Location = new System.Drawing.Point(217, 103);
-            this.comboBoxGame.Name = "comboBoxGame";
-            this.comboBoxGame.Size = new System.Drawing.Size(247, 20);
-            this.comboBoxGame.Style = DevComponents.DotNetBar.eDotNetBarStyle.OfficeXP;
-            this.comboBoxGame.TabIndex = 6;
-            this.comboBoxGame.WatermarkColor = System.Drawing.Color.Red;
-            this.comboBoxGame.SelectedIndexChanged += new System.EventHandler(this.comboBoxGame_SelectedIndexChanged);
-            // 
             // pictureIcon
             // 
             this.pictureIcon.BackColor = System.Drawing.Color.Transparent;
@@ -155,11 +140,11 @@
             // 
             this.lblColor.AutoSize = true;
             this.lblColor.BackColor = System.Drawing.Color.Transparent;
-            this.lblColor.Font = new System.Drawing.Font("POKERFACE", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblColor.ForeColor = System.Drawing.Color.Red;
             this.lblColor.Location = new System.Drawing.Point(32, 252);
             this.lblColor.Name = "lblColor";
-            this.lblColor.Size = new System.Drawing.Size(44, 12);
+            this.lblColor.Size = new System.Drawing.Size(51, 13);
             this.lblColor.TabIndex = 10;
             this.lblColor.Text = "COLORS";
             // 
@@ -211,23 +196,23 @@
             // 
             this.lblAddGame.AutoSize = true;
             this.lblAddGame.BackColor = System.Drawing.Color.Transparent;
-            this.lblAddGame.Font = new System.Drawing.Font("POKERFACE", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddGame.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lblAddGame.Location = new System.Drawing.Point(598, 254);
             this.lblAddGame.Name = "lblAddGame";
-            this.lblAddGame.Size = new System.Drawing.Size(62, 12);
+            this.lblAddGame.Size = new System.Drawing.Size(54, 13);
             this.lblAddGame.TabIndex = 16;
-            this.lblAddGame.Text = "ADD GAME";
+            this.lblAddGame.Text = "ADD EXE";
             // 
             // lblMusic
             // 
             this.lblMusic.AutoSize = true;
             this.lblMusic.BackColor = System.Drawing.Color.Transparent;
-            this.lblMusic.Font = new System.Drawing.Font("POKERFACE", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMusic.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMusic.ForeColor = System.Drawing.Color.Red;
             this.lblMusic.Location = new System.Drawing.Point(420, 257);
             this.lblMusic.Name = "lblMusic";
-            this.lblMusic.Size = new System.Drawing.Size(36, 12);
+            this.lblMusic.Size = new System.Drawing.Size(41, 13);
             this.lblMusic.TabIndex = 17;
             this.lblMusic.Text = "MUSIC";
             // 
@@ -252,6 +237,15 @@
             this.symbolRefresh.Text = "symbolBox1";
             this.symbolRefresh.Click += new System.EventHandler(this.symbolRefresh_Click);
             // 
+            // comboBoxGame
+            // 
+            this.comboBoxGame.FormattingEnabled = true;
+            this.comboBoxGame.Location = new System.Drawing.Point(194, 95);
+            this.comboBoxGame.Name = "comboBoxGame";
+            this.comboBoxGame.Size = new System.Drawing.Size(289, 21);
+            this.comboBoxGame.TabIndex = 19;
+            this.comboBoxGame.SelectedIndexChanged += new System.EventHandler(this.comboBoxGame_SelectedIndexChanged);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -259,6 +253,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(674, 365);
+            this.Controls.Add(this.comboBoxGame);
             this.Controls.Add(this.symbolRefresh);
             this.Controls.Add(this.lblMusic);
             this.Controls.Add(this.lblAddGame);
@@ -269,7 +264,6 @@
             this.Controls.Add(this.lblColor);
             this.Controls.Add(this.btnQuadri1);
             this.Controls.Add(this.pictureIcon);
-            this.Controls.Add(this.comboBoxGame);
             this.Controls.Add(this.btnLaunch);
             this.Controls.Add(this.symbolHelp);
             this.Controls.Add(this.btnRandom);
@@ -291,7 +285,6 @@
         private System.Windows.Forms.Button btnRandom;
         private DevComponents.DotNetBar.Controls.SymbolBox symbolHelp;
         private System.Windows.Forms.Button btnLaunch;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx comboBoxGame;
         private System.Windows.Forms.PictureBox pictureIcon;
         private System.Windows.Forms.Button btnQuadri1;
         private System.Windows.Forms.Button btnQuadri5;
@@ -304,6 +297,7 @@
         private System.Windows.Forms.Label lblMusic;
         private System.Windows.Forms.Timer timerTitle;
         private DevComponents.DotNetBar.Controls.SymbolBox symbolRefresh;
+        private System.Windows.Forms.ComboBox comboBoxGame;
     }
 }
 

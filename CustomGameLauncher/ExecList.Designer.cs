@@ -1,6 +1,6 @@
 ﻿namespace CustomGameLauncher
 {
-    partial class GameList
+    partial class ExecList
     {
         /// <summary>
         /// Required designer variable.
@@ -159,7 +159,7 @@
             this.btnRemove.UseVisualStyleBackColor = true;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
-            // GameList
+            // ExecList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -169,8 +169,8 @@
             this.Controls.Add(this.listNames);
             this.Controls.Add(this.symbolBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "GameList";
-            this.Text = "GameList";
+            this.Name = "ExecList";
+            this.Text = "ExecList";
             this.Load += new System.EventHandler(this.GameList_Load);
             this.panelTools.ResumeLayout(false);
             this.panelTools.PerformLayout();

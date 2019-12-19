@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevComponents.DotNetBar;
 
 namespace CustomGameLauncher
 {
@@ -48,7 +49,11 @@ namespace CustomGameLauncher
 
         private void comboBoxGame_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            string filename = Properties.Settings.Default.Paths[comboBoxGame.SelectedIndex];
+            if (filename == "") return;
+            Icon icon = Icon.ExtractAssociatedIcon(filename);
+            Bitmap bitmapIcon = icon.ToBitmap();
+            pictureIcon.Image = bitmapIcon;
         }
 
         private void btnQuadri1_Click(object sender, EventArgs e)
@@ -69,7 +74,7 @@ namespace CustomGameLauncher
 
         private void btnFiori_Click(object sender, EventArgs e)
         {
-            GameList listForm = new GameList();
+            ExecList listForm = new ExecList();
             listForm.ShowDialog();
         }
 

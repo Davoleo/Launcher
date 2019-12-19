@@ -50,11 +50,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GameList.cs">
+    <Compile Include="ExecList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GameList.Designer.cs">
-      <DependentUpon>GameList.cs</DependentUpon>
+    <Compile Include="ExecList.Designer.cs">
+      <DependentUpon>ExecList.cs</DependentUpon>
     </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
@@ -64,8 +64,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="GameList.resx">
-      <DependentUpon>GameList.cs</DependentUpon>
+    <EmbeddedResource Include="ExecList.resx">
+      <DependentUpon>ExecList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
