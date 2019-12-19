@@ -110,7 +110,7 @@
             this.comboBoxGame.FocusHighlightColor = System.Drawing.Color.Red;
             this.comboBoxGame.FormattingEnabled = true;
             this.comboBoxGame.ItemHeight = 14;
-            this.comboBoxGame.Location = new System.Drawing.Point(217, 108);
+            this.comboBoxGame.Location = new System.Drawing.Point(217, 103);
             this.comboBoxGame.Name = "comboBoxGame";
             this.comboBoxGame.Size = new System.Drawing.Size(247, 20);
             this.comboBoxGame.Style = DevComponents.DotNetBar.eDotNetBarStyle.OfficeXP;
@@ -182,6 +182,7 @@
             this.btnCuori8.Size = new System.Drawing.Size(65, 81);
             this.btnCuori8.TabIndex = 12;
             this.btnCuori8.UseVisualStyleBackColor = true;
+            this.btnCuori8.Click += new System.EventHandler(this.btnCuori8_Click);
             // 
             // btnCuori
             // 
@@ -192,6 +193,7 @@
             this.btnCuori.Size = new System.Drawing.Size(65, 81);
             this.btnCuori.TabIndex = 13;
             this.btnCuori.UseVisualStyleBackColor = true;
+            this.btnCuori.Click += new System.EventHandler(this.btnCuori_Click);
             // 
             // btnFiori
             // 
@@ -202,6 +204,7 @@
             this.btnFiori.Size = new System.Drawing.Size(65, 81);
             this.btnFiori.TabIndex = 15;
             this.btnFiori.UseVisualStyleBackColor = true;
+            this.btnFiori.Click += new System.EventHandler(this.btnFiori_Click);
             // 
             // lblAddGame
             // 
@@ -258,6 +261,7 @@
             this.MaximizeBox = false;
             this.Name = "Main";
             this.Text = "CGL";
+            this.Load += new System.EventHandler(this.Main_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureIcon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

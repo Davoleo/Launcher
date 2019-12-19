@@ -12,6 +12,7 @@ namespace CustomGameLauncher
 {
     public partial class Main : Form
     {
+        System.Media.SoundPlayer player = new System.Media.SoundPlayer(Properties.Resources.Pinguini_Tattici_Nucleari___Pula__Parziale_);
         private int x = 2;
 
         public Main()
@@ -64,6 +65,33 @@ namespace CustomGameLauncher
             btnQuadri5.Enabled = false;
             btnQuadri5.SendToBack();
             btnQuadri1.Enabled = true;
+        }
+
+        private void btnFiori_Click(object sender, EventArgs e)
+        {
+            GameList listForm = new GameList();
+            listForm.Show();
+        }
+
+        private void btnCuori_Click(object sender, EventArgs e)
+        {
+            player.Stop();
+            btnCuori.Enabled = false;
+            btnCuori.SendToBack();
+            btnCuori8.Enabled = true;
+        }
+
+        private void btnCuori8_Click(object sender, EventArgs e)
+        {
+            player.Play();
+            btnCuori8.Enabled = false;
+            btnCuori8.SendToBack();
+            btnCuori.Enabled = true;
+        }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+            //player.Play();
         }
     }
 }
