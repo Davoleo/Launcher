@@ -121,9 +121,6 @@
   <data name="chiptune_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\chiptune-#1.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="chiptune_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\chiptune-2.wma;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="chiptune_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\chiptune_2.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>

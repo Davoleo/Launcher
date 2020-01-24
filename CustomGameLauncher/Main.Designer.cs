@@ -271,7 +271,7 @@
             this.Controls.Add(this.btnQuadri5);
             this.MaximizeBox = false;
             this.Name = "Main";
-            this.Text = "CGL";
+            this.Text = "Dav Launcher";
             this.Load += new System.EventHandler(this.Main_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureIcon)).EndInit();
             this.ResumeLayout(false);

@@ -1,14 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using DevComponents.DotNetBar;
 
 namespace CustomGameLauncher
 {
@@ -16,10 +9,13 @@ namespace CustomGameLauncher
     {
         private int x = 2;
         private System.Media.SoundPlayer player;
+        private ExecList listForm;
 
         public Main()
         {
             InitializeComponent();
+
+            listForm = new ExecList();
 
             //MemoryStream stream = new MemoryStream();
             //StreamWriter writer = new StreamWriter(stream);
@@ -27,7 +23,9 @@ namespace CustomGameLauncher
             //writer.Write(Properties.Resources.chiptune_3);
             //writer.Flush();
             //stream.Position = 0;
-            player = new System.Media.SoundPlayer(Properties.Resources.chiptune_3);
+            player = new System.Media.SoundPlayer(Properties.Resources.chiptune_1);
+
+            AppDomain.CurrentDomain.ProcessExit += CurrentDomain_ProcessExit;
         }
 
         private void timerTitle_Tick(object sender, EventArgs e)
@@ -53,7 +51,7 @@ namespace CustomGameLauncher
 
         private void symbolHelp_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("This application was written in C# by Davoleo AKA D36L" + Environment.NewLine + "Copyright - (c) - 2018 - D36L" + Environment.NewLine + Environment.NewLine + "Music: Pinguini Tattici Nucleari - Pula" + Environment.NewLine + Environment.NewLine + "Code and gfx: D36L", "Credits", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("This application was coded by Davoleo AKA D36L" + Environment.NewLine + "Copyright - (c) - Davoleo - 2018-2020" + Environment.NewLine + Environment.NewLine + "Music Credits: Razor1911" + Environment.NewLine + Environment.NewLine + "Code and gfx: D36L", "Credits", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void comboBoxGame_SelectedIndexChanged(object sender, EventArgs e)
@@ -83,7 +81,6 @@ namespace CustomGameLauncher
 
         private void btnFiori_Click(object sender, EventArgs e)
         {
-            ExecList listForm = new ExecList();
             listForm.ShowDialog();
         }
 
@@ -116,6 +113,10 @@ namespace CustomGameLauncher
             comboBoxGame.Items.Clear();
             foreach (string name in Properties.Settings.Default.Games)
                 comboBoxGame.Items.Add(name);
+        }
+
+        private void CurrentDomain_ProcessExit(object sender, EventArgs e)
+        {
         }
     }
 }

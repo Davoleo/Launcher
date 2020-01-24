@@ -1,20 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
-using System.Windows.Forms.VisualStyles;
 
 namespace CustomGameLauncher
 {
     public partial class ExecList : Form
     {
-        //public static Dictionary<string, string> execMap = new Dictionary<string, string>();
+        public static Dictionary<string, string> data = new Dictionary<string, string>();
+
+        public const string XmlPath = "..\\..\\Resources\\applications.xml";
 
         public ExecList()
         {
@@ -77,15 +72,23 @@ namespace CustomGameLauncher
             {
                 Properties.Settings.Default.Games.Add(txbName.Text);
                 Properties.Settings.Default.Paths.Add(txbPath.Text);
+
                 listNames.Items.Add(txbName.Text);
                 listPaths.Items.Add(txbPath.Text);
+
+                data.Add(txbName.Text, txbPath.Text);
             }
+        }
+
+        public void writeToXml()
+        {
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            //TODO : Fix List Desynchronization
+            data.Remove((string) listNames.SelectedItem);
 
+            //TODO : Fix ListView Desynchronization
             listNames.Items.Remove(listNames.SelectedItem);
             listPaths.Items.Remove(listPaths.SelectedItem);
         }
