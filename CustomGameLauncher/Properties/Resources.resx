@@ -118,7 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Pinguini_Tattici_Nucleari___Pula__Parziale_" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Pinguini Tattici Nucleari - 08 - Pula.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="chiptune_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chiptune-#1.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="chiptune_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chiptune-2.wma;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="chiptune_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chiptune_2.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

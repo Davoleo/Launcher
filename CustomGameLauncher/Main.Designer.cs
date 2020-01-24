@@ -140,11 +140,11 @@
             // 
             this.lblColor.AutoSize = true;
             this.lblColor.BackColor = System.Drawing.Color.Transparent;
-            this.lblColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblColor.ForeColor = System.Drawing.Color.Red;
             this.lblColor.Location = new System.Drawing.Point(32, 252);
             this.lblColor.Name = "lblColor";
-            this.lblColor.Size = new System.Drawing.Size(51, 13);
+            this.lblColor.Size = new System.Drawing.Size(57, 13);
             this.lblColor.TabIndex = 10;
             this.lblColor.Text = "COLORS";
             // 
@@ -196,11 +196,11 @@
             // 
             this.lblAddGame.AutoSize = true;
             this.lblAddGame.BackColor = System.Drawing.Color.Transparent;
-            this.lblAddGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddGame.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lblAddGame.Location = new System.Drawing.Point(598, 254);
             this.lblAddGame.Name = "lblAddGame";
-            this.lblAddGame.Size = new System.Drawing.Size(54, 13);
+            this.lblAddGame.Size = new System.Drawing.Size(61, 13);
             this.lblAddGame.TabIndex = 16;
             this.lblAddGame.Text = "ADD EXE";
             // 
@@ -208,11 +208,11 @@
             // 
             this.lblMusic.AutoSize = true;
             this.lblMusic.BackColor = System.Drawing.Color.Transparent;
-            this.lblMusic.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMusic.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMusic.ForeColor = System.Drawing.Color.Red;
             this.lblMusic.Location = new System.Drawing.Point(420, 257);
             this.lblMusic.Name = "lblMusic";
-            this.lblMusic.Size = new System.Drawing.Size(41, 13);
+            this.lblMusic.Size = new System.Drawing.Size(46, 13);
             this.lblMusic.TabIndex = 17;
             this.lblMusic.Text = "MUSIC";
             // 

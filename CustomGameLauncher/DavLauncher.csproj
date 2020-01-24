@@ -95,7 +95,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Pinguini Tattici Nucleari - Pula %28Parziale%29.wav" />
+    <None Include="Resources\chiptune_2.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chiptune-#1.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

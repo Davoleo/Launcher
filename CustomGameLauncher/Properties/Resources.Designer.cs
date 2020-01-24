@@ -63,9 +63,28 @@ namespace CustomGameLauncher.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream Pinguini_Tattici_Nucleari___Pula__Parziale_ {
+        internal static System.IO.UnmanagedMemoryStream chiptune_1 {
             get {
-                return ResourceManager.GetStream("Pinguini_Tattici_Nucleari___Pula__Parziale_", resourceCulture);
+                return ResourceManager.GetStream("chiptune_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] chiptune_2 {
+            get {
+                object obj = ResourceManager.GetObject("chiptune_2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream chiptune_3 {
+            get {
+                return ResourceManager.GetStream("chiptune_3", resourceCulture);
             }
         }
     }

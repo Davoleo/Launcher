@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,12 +14,20 @@ namespace CustomGameLauncher
 {
     public partial class Main : Form
     {
-        System.Media.SoundPlayer player = new System.Media.SoundPlayer(Properties.Resources.Pinguini_Tattici_Nucleari___Pula__Parziale_);
         private int x = 2;
+        private System.Media.SoundPlayer player;
 
         public Main()
         {
             InitializeComponent();
+
+            //MemoryStream stream = new MemoryStream();
+            //StreamWriter writer = new StreamWriter(stream);
+            //writer.Write(Properties.Resources.chiptune_1);
+            //writer.Write(Properties.Resources.chiptune_3);
+            //writer.Flush();
+            //stream.Position = 0;
+            player = new System.Media.SoundPlayer(Properties.Resources.chiptune_3);
         }
 
         private void timerTitle_Tick(object sender, EventArgs e)
