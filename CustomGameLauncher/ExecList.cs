@@ -1,31 +1,48 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
+using System.Diagnostics.CodeAnalysis;
+using System.IO;
 using System.Windows.Forms;
 
 namespace CustomGameLauncher
 {
+    [SuppressMessage("ReSharper", "LocalizableElement")]
     public partial class ExecList : Form
     {
         public static Dictionary<string, string> data = new Dictionary<string, string>();
 
-        public const string XmlPath = "..\\..\\Resources\\applications.xml";
+        //public string FilePath = System.Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\applications.txt";
+        public static string FilePath = "..\\..\\Resources\\applications.txt";
 
         public ExecList()
         {
             InitializeComponent();
+
+            //First File Read
+            StreamReader reader = new StreamReader(FilePath);
+
+            string nextLine = reader.ReadLine();
+
+            while (nextLine != null)
+            {
+                string[] pair = nextLine.Split('|');
+
+                string name = pair[0].TrimEnd();
+                string path = pair[1].TrimStart();
+
+                data.Add(name, path);
+                listNames.Items.Add(name);
+                listPaths.Items.Add(path);
+
+                nextLine = reader.ReadLine();
+            }
+
+            reader.Close();
+            reader.Dispose();
         }
 
         private void GameList_Load(object sender, EventArgs e)
         {
-            string[] names = new string[Properties.Settings.Default.Games.Count];
-            string[] paths = new string[Properties.Settings.Default.Paths.Count];
-
-            Properties.Settings.Default.Games.CopyTo(names, 0);
-            Properties.Settings.Default.Paths.CopyTo(paths, 0);
-
-            listNames.Items.AddRange(names);
-            listPaths.Items.AddRange(paths);
         }
 
         private void symbolBox1_Click(object sender, EventArgs e)
@@ -58,7 +75,7 @@ namespace CustomGameLauncher
             openFileDialog1.Filter = "Executable Files|*.exe|All Files|*.*";
             openFileDialog1.Title = "Select the file you want to run";
 
-            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 txbPath.Text = openFileDialog1.FileName;
             }
@@ -66,22 +83,41 @@ namespace CustomGameLauncher
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (txbName.Text == "" || txbPath.Text == "")
+            string name = txbName.Text;
+            string path = txbPath.Text;
+
+            if (name == "" || path == "")
                 MessageBox.Show("Invalid Game_Name/Game_Path!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             else
             {
-                Properties.Settings.Default.Games.Add(txbName.Text);
-                Properties.Settings.Default.Paths.Add(txbPath.Text);
+                listNames.Items.Add(name);
+                listPaths.Items.Add(path);
 
-                listNames.Items.Add(txbName.Text);
-                listPaths.Items.Add(txbPath.Text);
+                data.Add(name, path);
 
-                data.Add(txbName.Text, txbPath.Text);
+                addToFile(name, path);
             }
         }
 
-        public void writeToXml()
+        public void writeDictionaryToFile()
         {
+            StreamWriter writer = new StreamWriter(FilePath, false);
+
+            foreach (KeyValuePair<string, string> pair in data)
+            {
+                writer.WriteLine(pair.Key + " | " + pair.Value);
+            }
+
+            writer.Close();
+            writer.Dispose();
+        }
+
+        private void addToFile(string name, string path)
+        {
+            StreamWriter writer = new StreamWriter(FilePath, true);
+            writer.WriteLine(name + " | " + path);
+            writer.Close();
+            writer.Dispose();
         }
 
         private void btnRemove_Click(object sender, EventArgs e)

@@ -1,0 +1,4 @@
+JRT | D:\Everything\Tools\JRT.exe
+Rufus | D:\Everything\Tools\rufus-3.8.exe
+AdwCleaner | D:\Everything\Tools\adwcleaner_7.4.exe
+JCPicker | D:\Everything\Tools\jcpicker.exe

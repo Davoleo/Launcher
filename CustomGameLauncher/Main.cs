@@ -1,10 +1,13 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using CustomGameLauncher.Properties;
 
 namespace CustomGameLauncher
 {
+    [SuppressMessage("ReSharper", "LocalizableElement")]
     public partial class Main : Form
     {
         private int x = 2;
@@ -56,8 +59,11 @@ namespace CustomGameLauncher
 
         private void comboBoxGame_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string filename = Properties.Settings.Default.Paths[comboBoxGame.SelectedIndex];
-            if (filename == "") return;
+            string filename = ExecList.data[comboBoxGame.SelectedItem.ToString()];
+            
+            if (filename == "") 
+                return;
+
             Icon icon = Icon.ExtractAssociatedIcon(filename);
             Bitmap bitmapIcon = icon.ToBitmap();
             pictureIcon.Image = bitmapIcon;
@@ -104,15 +110,25 @@ namespace CustomGameLauncher
         {
             player.Play();
 
-            foreach (string name in Properties.Settings.Default.Games)
-                comboBoxGame.Items.Add(name);
+            foreach (var pair in ExecList.data)
+            {
+                comboBoxGame.Items.Add(pair.Key);
+            }
+
+            if (!File.Exists(ExecList.FilePath))
+            {
+                File.Create(ExecList.FilePath);
+            }
         }
 
         private void symbolRefresh_Click(object sender, EventArgs e)
         {
             comboBoxGame.Items.Clear();
-            foreach (string name in Properties.Settings.Default.Games)
-                comboBoxGame.Items.Add(name);
+
+            foreach (var pair in ExecList.data)
+            {
+                comboBoxGame.Items.Add(pair.Key);
+            }
         }
 
         private void CurrentDomain_ProcessExit(object sender, EventArgs e)
