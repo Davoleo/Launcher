@@ -107,9 +107,10 @@
             // pictureIcon
             // 
             this.pictureIcon.BackColor = System.Drawing.Color.Transparent;
-            this.pictureIcon.Location = new System.Drawing.Point(278, 150);
+            this.pictureIcon.Location = new System.Drawing.Point(314, 165);
             this.pictureIcon.Name = "pictureIcon";
-            this.pictureIcon.Size = new System.Drawing.Size(114, 95);
+            this.pictureIcon.Size = new System.Drawing.Size(50, 50);
+            this.pictureIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureIcon.TabIndex = 7;
             this.pictureIcon.TabStop = false;
             // 
