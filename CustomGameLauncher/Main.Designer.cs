@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.lblTitle = new System.Windows.Forms.Label();
             this.btnRandom = new System.Windows.Forms.Button();
-            this.symbolHelp = new DevComponents.DotNetBar.Controls.SymbolBox();
             this.btnLaunch = new System.Windows.Forms.Button();
             this.pictureIcon = new System.Windows.Forms.PictureBox();
             this.btnQuadri1 = new System.Windows.Forms.Button();
@@ -45,8 +44,9 @@
             this.lblAddGame = new System.Windows.Forms.Label();
             this.lblMusic = new System.Windows.Forms.Label();
             this.timerTitle = new System.Windows.Forms.Timer(this.components);
-            this.symbolRefresh = new DevComponents.DotNetBar.Controls.SymbolBox();
             this.comboBoxGame = new System.Windows.Forms.ComboBox();
+            this.buttonRefresh = new System.Windows.Forms.Button();
+            this.buttonHelp = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureIcon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,21 +75,6 @@
             this.btnRandom.TabIndex = 2;
             this.btnRandom.UseVisualStyleBackColor = false;
             this.btnRandom.Click += new System.EventHandler(this.btnRandom_Click);
-            // 
-            // symbolHelp
-            // 
-            this.symbolHelp.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.symbolHelp.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.symbolHelp.Location = new System.Drawing.Point(647, 0);
-            this.symbolHelp.Name = "symbolHelp";
-            this.symbolHelp.Size = new System.Drawing.Size(27, 23);
-            this.symbolHelp.Symbol = "";
-            this.symbolHelp.TabIndex = 4;
-            this.symbolHelp.Text = "symbolBox1";
-            this.symbolHelp.Click += new System.EventHandler(this.SymbolHelp_Click);
             // 
             // btnLaunch
             // 
@@ -225,21 +210,6 @@
             this.timerTitle.Interval = 500;
             this.timerTitle.Tick += new System.EventHandler(this.TimerTitle_Tick);
             // 
-            // symbolRefresh
-            // 
-            this.symbolRefresh.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.symbolRefresh.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.symbolRefresh.Location = new System.Drawing.Point(0, 0);
-            this.symbolRefresh.Name = "symbolRefresh";
-            this.symbolRefresh.Size = new System.Drawing.Size(26, 23);
-            this.symbolRefresh.Symbol = "";
-            this.symbolRefresh.TabIndex = 18;
-            this.symbolRefresh.Text = "symbolBox1";
-            this.symbolRefresh.Click += new System.EventHandler(this.SymbolRefresh_Click);
-            // 
             // comboBoxGame
             // 
             this.comboBoxGame.FormattingEnabled = true;
@@ -249,6 +219,30 @@
             this.comboBoxGame.TabIndex = 19;
             this.comboBoxGame.SelectedIndexChanged += new System.EventHandler(this.ComboBoxGame_SelectedIndexChanged);
             // 
+            // buttonRefresh
+            // 
+            this.buttonRefresh.BackColor = System.Drawing.Color.Transparent;
+            this.buttonRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRefresh.Image = global::CustomGameLauncher.Properties.Resources.loop;
+            this.buttonRefresh.Location = new System.Drawing.Point(0, 0);
+            this.buttonRefresh.Name = "buttonRefresh";
+            this.buttonRefresh.Size = new System.Drawing.Size(40, 40);
+            this.buttonRefresh.TabIndex = 20;
+            this.buttonRefresh.UseVisualStyleBackColor = false;
+            this.buttonRefresh.Click += new System.EventHandler(this.SymbolRefresh_Click);
+            // 
+            // buttonHelp
+            // 
+            this.buttonHelp.BackColor = System.Drawing.Color.Transparent;
+            this.buttonHelp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonHelp.Image = global::CustomGameLauncher.Properties.Resources.help;
+            this.buttonHelp.Location = new System.Drawing.Point(634, 0);
+            this.buttonHelp.Name = "buttonHelp";
+            this.buttonHelp.Size = new System.Drawing.Size(40, 40);
+            this.buttonHelp.TabIndex = 21;
+            this.buttonHelp.UseVisualStyleBackColor = false;
+            this.buttonHelp.Click += new System.EventHandler(this.SymbolHelp_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -256,9 +250,10 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(674, 365);
+            this.Controls.Add(this.buttonHelp);
+            this.Controls.Add(this.buttonRefresh);
             this.Controls.Add(this.btnCuori8);
             this.Controls.Add(this.comboBoxGame);
-            this.Controls.Add(this.symbolRefresh);
             this.Controls.Add(this.lblMusic);
             this.Controls.Add(this.lblAddGame);
             this.Controls.Add(this.btnFiori);
@@ -268,10 +263,10 @@
             this.Controls.Add(this.btnQuadri1);
             this.Controls.Add(this.pictureIcon);
             this.Controls.Add(this.btnLaunch);
-            this.Controls.Add(this.symbolHelp);
             this.Controls.Add(this.btnRandom);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnQuadri5);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Main";
             this.Text = "Dav Launcher";
@@ -286,7 +281,6 @@
 
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Button btnRandom;
-        private DevComponents.DotNetBar.Controls.SymbolBox symbolHelp;
         private System.Windows.Forms.Button btnLaunch;
         private System.Windows.Forms.PictureBox pictureIcon;
         private System.Windows.Forms.Button btnQuadri1;
@@ -299,8 +293,9 @@
         private System.Windows.Forms.Label lblAddGame;
         private System.Windows.Forms.Label lblMusic;
         private System.Windows.Forms.Timer timerTitle;
-        private DevComponents.DotNetBar.Controls.SymbolBox symbolRefresh;
         private System.Windows.Forms.ComboBox comboBoxGame;
+        private System.Windows.Forms.Button buttonRefresh;
+        private System.Windows.Forms.Button buttonHelp;
     }
 }
 

@@ -18,6 +18,11 @@ namespace CustomGameLauncher
         {
             InitializeComponent();
 
+            if (!File.Exists(ExesListFilePath))
+            {
+                File.Create(ExesListFilePath);
+            }
+
             //First File Read
             StreamReader reader = new StreamReader(ExesListFilePath);
 
@@ -46,12 +51,12 @@ namespace CustomGameLauncher
             if (panelTools.Visible)
             {
                 panelTools.Hide();
-                Width = 455;
+                Width = 481;
             }
             else
             {
                 panelTools.Show();
-                Width = 702;
+                Width = 729;
             }
         }
 

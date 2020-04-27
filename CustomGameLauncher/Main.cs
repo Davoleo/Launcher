@@ -29,6 +29,11 @@ namespace CustomGameLauncher
             ClearAndFillIcons();
         }
 
+        private void Main_Load(object sender, EventArgs e)
+        {
+            RefreshComboItems();
+        }
+
         private void TimerTitle_Tick(object sender, EventArgs e)
         {
             x++;
@@ -97,16 +102,6 @@ namespace CustomGameLauncher
             btnCuori.Enabled = true;
         }
 
-        private void Main_Load(object sender, EventArgs e)
-        {
-            RefreshComboItems();
-
-            if (!File.Exists(ExecList.ExesListFilePath))
-            {
-                File.Create(ExecList.ExesListFilePath);
-            }
-        }
-
         private void SymbolRefresh_Click(object sender, EventArgs e)
         {
             RefreshComboItems();
@@ -148,14 +143,28 @@ namespace CustomGameLauncher
 
         private void BtnLaunch_Click(object sender, EventArgs e)
         {
-            string filename = ExecList.data[(string) comboBoxGame.SelectedItem];
-            ProcessStartInfo processInfo = new ProcessStartInfo(filename);
-            Process.Start(processInfo);
+            if (comboBoxGame.SelectedIndex != -1)
+            {
+                string filename = ExecList.data[(string) comboBoxGame.SelectedItem];
+                ProcessStartInfo processInfo = new ProcessStartInfo(filename);
+                Process.Start(processInfo);
+            }
+            else
+            {
+                MessageBox.Show("You must select a valid application first!");
+            }
         }
 
         private void btnRandom_Click(object sender, EventArgs e)
         {
-            comboBoxGame.SelectedIndex = random.Next(comboBoxGame.Items.Count);
+            if (comboBoxGame.Items.Count > 1)
+            {
+                comboBoxGame.SelectedIndex = random.Next(comboBoxGame.Items.Count);
+            }
+            else
+            {
+                MessageBox.Show("Exe List is too short");
+            }
         }
     }
 }
