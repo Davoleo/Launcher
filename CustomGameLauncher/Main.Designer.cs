@@ -199,11 +199,11 @@
             this.lblAddGame.BackColor = System.Drawing.Color.Transparent;
             this.lblAddGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddGame.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblAddGame.Location = new System.Drawing.Point(598, 254);
+            this.lblAddGame.Location = new System.Drawing.Point(593, 255);
             this.lblAddGame.Name = "lblAddGame";
-            this.lblAddGame.Size = new System.Drawing.Size(61, 13);
+            this.lblAddGame.Size = new System.Drawing.Size(72, 13);
             this.lblAddGame.TabIndex = 16;
-            this.lblAddGame.Text = "ADD EXE";
+            this.lblAddGame.Text = "EDIT EXES";
             // 
             // lblMusic
             // 

@@ -1,9 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
-using CustomGameLauncher.Properties;
 
 namespace CustomGameLauncher
 {
@@ -14,26 +14,24 @@ namespace CustomGameLauncher
         private System.Media.SoundPlayer player;
         private ExecList listForm;
 
+        private List<Bitmap> icons = new List<Bitmap>();
+
         public Main()
         {
             InitializeComponent();
 
             listForm = new ExecList();
 
-            //MemoryStream stream = new MemoryStream();
-            //StreamWriter writer = new StreamWriter(stream);
-            //writer.Write(Properties.Resources.chiptune_1);
-            //writer.Write(Properties.Resources.chiptune_3);
-            //writer.Flush();
-            //stream.Position = 0;
             player = new System.Media.SoundPlayer(Properties.Resources.chiptune_1);
 
             AppDomain.CurrentDomain.ProcessExit += CurrentDomain_ProcessExit;
+
+            ClearAndFillIcons();
         }
 
         private void timerTitle_Tick(object sender, EventArgs e)
         {
-            x += 1;
+            x++;
             switch(x)
             {
                 case 1:
@@ -59,14 +57,7 @@ namespace CustomGameLauncher
 
         private void comboBoxGame_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string filename = ExecList.data[comboBoxGame.SelectedItem.ToString()];
-            
-            if (filename == "") 
-                return;
-
-            Icon icon = Icon.ExtractAssociatedIcon(filename);
-            Bitmap bitmapIcon = icon.ToBitmap();
-            pictureIcon.Image = bitmapIcon;
+            pictureIcon.Image = icons[comboBoxGame.SelectedIndex];
         }
 
         private void btnQuadri1_Click(object sender, EventArgs e)
@@ -87,7 +78,7 @@ namespace CustomGameLauncher
 
         private void btnFiori_Click(object sender, EventArgs e)
         {
-            listForm.ShowDialog();
+            listForm.Show();
         }
 
         private void btnCuori_Click(object sender, EventArgs e)
@@ -128,6 +119,27 @@ namespace CustomGameLauncher
             foreach (var pair in ExecList.data)
             {
                 comboBoxGame.Items.Add(pair.Key);
+            }
+
+            ClearAndFillIcons();
+        }
+
+        /// <summary>
+        /// Clear and Fill Icon List
+        /// </summary>
+        private void ClearAndFillIcons()
+        {
+            icons.Clear();
+            foreach (KeyValuePair<string, string> namePathPair in ExecList.data)
+            {
+                string filename = namePathPair.Value;
+
+                if (filename == "") 
+                    continue;
+
+                Icon icon = Icon.ExtractAssociatedIcon(filename);
+                Bitmap bitmapIcon = icon.ToBitmap();
+                icons.Add(bitmapIcon);
             }
         }
 

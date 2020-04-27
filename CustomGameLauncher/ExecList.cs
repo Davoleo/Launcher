@@ -11,9 +11,9 @@ namespace CustomGameLauncher
     {
         public static Dictionary<string, string> data = new Dictionary<string, string>();
 
-        //public string FilePath = System.Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\applications.txt";
-        public static string FilePath = "..\\..\\Resources\\applications.txt";
-
+        //To write in the Local AppData Folder
+        //public string FilePath = System.Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\DavLauncher\\applications.txt";
+        public static string FilePath = Application.StartupPath + "\\applications.txt";
         public ExecList()
         {
             InitializeComponent();
@@ -41,11 +41,7 @@ namespace CustomGameLauncher
             reader.Dispose();
         }
 
-        private void GameList_Load(object sender, EventArgs e)
-        {
-        }
-
-        private void symbolBox1_Click(object sender, EventArgs e)
+        private void SymbolBox1_Click(object sender, EventArgs e)
         {
             if (panelTools.Visible)
             {
@@ -59,7 +55,7 @@ namespace CustomGameLauncher
             }
         }
 
-        private void listGames_SelectedIndexChanged(object sender, EventArgs e)
+        private void ListGames_SelectedIndexChanged(object sender, EventArgs e)
         {
             listPaths.SelectedIndex = listNames.SelectedIndex;
         }
@@ -69,7 +65,7 @@ namespace CustomGameLauncher
             listNames.SelectedIndex = listPaths.SelectedIndex;
         }
 
-        private void btnBrowse_Click(object sender, EventArgs e)
+        private void BtnBrowse_Click(object sender, EventArgs e)
         {
             openFileDialog1 = new OpenFileDialog();
             openFileDialog1.Filter = "Executable Files|*.exe|All Files|*.*";
@@ -81,13 +77,13 @@ namespace CustomGameLauncher
             }
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void BtnAdd_Click(object sender, EventArgs e)
         {
             string name = txbName.Text;
             string path = txbPath.Text;
 
             if (name == "" || path == "")
-                MessageBox.Show("Invalid Game_Name/Game_Path!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Invalid Software Name / Executable Path!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             else
             {
                 listNames.Items.Add(name);
@@ -95,11 +91,11 @@ namespace CustomGameLauncher
 
                 data.Add(name, path);
 
-                addToFile(name, path);
+                AddToFile(name, path);
             }
         }
 
-        public void writeDictionaryToFile()
+        public void WriteDictionaryToFile()
         {
             StreamWriter writer = new StreamWriter(FilePath, false);
 
@@ -112,7 +108,7 @@ namespace CustomGameLauncher
             writer.Dispose();
         }
 
-        private void addToFile(string name, string path)
+        private static void AddToFile(string name, string path)
         {
             StreamWriter writer = new StreamWriter(FilePath, true);
             writer.WriteLine(name + " | " + path);
@@ -120,13 +116,21 @@ namespace CustomGameLauncher
             writer.Dispose();
         }
 
-        private void btnRemove_Click(object sender, EventArgs e)
+        private void BtnRemove_Click(object sender, EventArgs e)
         {
+            DialogResult result = MessageBox.Show("Are You sure you want to delete the selected entry?", "Dav Launcher", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.No)
+                return;
+
+            int index = listNames.SelectedIndex;
+
             data.Remove((string) listNames.SelectedItem);
 
             //TODO : Fix ListView Desynchronization
-            listNames.Items.Remove(listNames.SelectedItem);
-            listPaths.Items.Remove(listPaths.SelectedItem);
+            listNames.Items.RemoveAt(index);
+            listPaths.Items.RemoveAt(index);
+
+            WriteDictionaryToFile();
         }
     }
 }

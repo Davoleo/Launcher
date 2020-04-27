@@ -32,6 +32,7 @@
             this.listNames = new System.Windows.Forms.ListBox();
             this.listPaths = new System.Windows.Forms.ListBox();
             this.panelTools = new System.Windows.Forms.Panel();
+            this.btnRemove = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnBrowse = new System.Windows.Forms.Button();
             this.txbPath = new System.Windows.Forms.TextBox();
@@ -39,7 +40,6 @@
             this.txbName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.btnRemove = new System.Windows.Forms.Button();
             this.panelTools.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,7 +55,7 @@
             this.symbolBox1.Symbol = "";
             this.symbolBox1.TabIndex = 0;
             this.symbolBox1.Text = "symbolBox1";
-            this.symbolBox1.Click += new System.EventHandler(this.symbolBox1_Click);
+            this.symbolBox1.Click += new System.EventHandler(this.SymbolBox1_Click);
             // 
             // listNames
             // 
@@ -64,7 +64,7 @@
             this.listNames.Name = "listNames";
             this.listNames.Size = new System.Drawing.Size(192, 264);
             this.listNames.TabIndex = 1;
-            this.listNames.SelectedIndexChanged += new System.EventHandler(this.listGames_SelectedIndexChanged);
+            this.listNames.SelectedIndexChanged += new System.EventHandler(this.ListGames_SelectedIndexChanged);
             // 
             // listPaths
             // 
@@ -91,15 +91,25 @@
             this.panelTools.TabIndex = 3;
             this.panelTools.Visible = false;
             // 
+            // btnRemove
+            // 
+            this.btnRemove.Location = new System.Drawing.Point(9, 247);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(227, 23);
+            this.btnRemove.TabIndex = 7;
+            this.btnRemove.Text = "Remove Selected Executable";
+            this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.BtnRemove_Click);
+            // 
             // btnAdd
             // 
             this.btnAdd.Location = new System.Drawing.Point(9, 218);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(227, 23);
             this.btnAdd.TabIndex = 5;
-            this.btnAdd.Text = "Add Game";
+            this.btnAdd.Text = "Add New Executable";
             this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.btnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
             // btnBrowse
             // 
@@ -109,7 +119,7 @@
             this.btnBrowse.TabIndex = 4;
             this.btnBrowse.Text = "Browse...";
             this.btnBrowse.UseVisualStyleBackColor = true;
-            this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
+            this.btnBrowse.Click += new System.EventHandler(this.BtnBrowse_Click);
             // 
             // txbPath
             // 
@@ -125,9 +135,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(6, 56);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 13);
+            this.label2.Size = new System.Drawing.Size(88, 13);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Game Path:";
+            this.label2.Text = "Executable Path:";
             // 
             // txbName
             // 
@@ -141,23 +151,13 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(6, 6);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 13);
+            this.label1.Size = new System.Drawing.Size(83, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Game Name:";
+            this.label1.Text = "Software Name:";
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // btnRemove
-            // 
-            this.btnRemove.Location = new System.Drawing.Point(9, 247);
-            this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(227, 23);
-            this.btnRemove.TabIndex = 7;
-            this.btnRemove.Text = "Remove Game";
-            this.btnRemove.UseVisualStyleBackColor = true;
-            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // ExecList
             // 
@@ -171,7 +171,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "ExecList";
             this.Text = "ExecList";
-            this.Load += new System.EventHandler(this.GameList_Load);
             this.panelTools.ResumeLayout(false);
             this.panelTools.PerformLayout();
             this.ResumeLayout(false);
