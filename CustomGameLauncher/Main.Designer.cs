@@ -165,7 +165,6 @@
             // 
             this.btnCuori8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCuori8.BackgroundImage")));
             this.btnCuori8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCuori8.Enabled = false;
             this.btnCuori8.Location = new System.Drawing.Point(399, 272);
             this.btnCuori8.Name = "btnCuori8";
             this.btnCuori8.Size = new System.Drawing.Size(65, 81);
@@ -177,6 +176,7 @@
             // 
             this.btnCuori.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCuori.BackgroundImage")));
             this.btnCuori.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCuori.Enabled = false;
             this.btnCuori.Location = new System.Drawing.Point(418, 272);
             this.btnCuori.Name = "btnCuori";
             this.btnCuori.Size = new System.Drawing.Size(65, 81);
@@ -256,13 +256,13 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(674, 365);
+            this.Controls.Add(this.btnCuori8);
             this.Controls.Add(this.comboBoxGame);
             this.Controls.Add(this.symbolRefresh);
             this.Controls.Add(this.lblMusic);
             this.Controls.Add(this.lblAddGame);
             this.Controls.Add(this.btnFiori);
             this.Controls.Add(this.btnCuori);
-            this.Controls.Add(this.btnCuori8);
             this.Controls.Add(this.btnPicche);
             this.Controls.Add(this.lblColor);
             this.Controls.Add(this.btnQuadri1);

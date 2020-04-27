@@ -171,6 +171,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "ExecList";
             this.Text = "ExecList";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ExecList_FormClosing);
             this.panelTools.ResumeLayout(false);
             this.panelTools.PerformLayout();
             this.ResumeLayout(false);

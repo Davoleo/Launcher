@@ -12,14 +12,14 @@ namespace CustomGameLauncher
         public static Dictionary<string, string> data = new Dictionary<string, string>();
 
         //To write in the Local AppData Folder
-        //public string FilePath = System.Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\DavLauncher\\applications.txt";
-        public static string FilePath = Application.StartupPath + "\\applications.txt";
+        //public string ExesListFilePath = System.Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\DavLauncher\\applications.txt";
+        public static string ExesListFilePath = Application.StartupPath + "\\applications.txt";
         public ExecList()
         {
             InitializeComponent();
 
             //First File Read
-            StreamReader reader = new StreamReader(FilePath);
+            StreamReader reader = new StreamReader(ExesListFilePath);
 
             string nextLine = reader.ReadLine();
 
@@ -97,7 +97,7 @@ namespace CustomGameLauncher
 
         public void WriteDictionaryToFile()
         {
-            StreamWriter writer = new StreamWriter(FilePath, false);
+            StreamWriter writer = new StreamWriter(ExesListFilePath, false);
 
             foreach (KeyValuePair<string, string> pair in data)
             {
@@ -110,7 +110,7 @@ namespace CustomGameLauncher
 
         private static void AddToFile(string name, string path)
         {
-            StreamWriter writer = new StreamWriter(FilePath, true);
+            StreamWriter writer = new StreamWriter(ExesListFilePath, true);
             writer.WriteLine(name + " | " + path);
             writer.Close();
             writer.Dispose();
@@ -131,6 +131,12 @@ namespace CustomGameLauncher
             listPaths.Items.RemoveAt(index);
 
             WriteDictionaryToFile();
+        }
+
+        private void ExecList_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Hide();
+            e.Cancel = true;
         }
     }
 }

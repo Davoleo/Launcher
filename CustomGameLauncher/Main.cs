@@ -99,27 +99,17 @@ namespace CustomGameLauncher
 
         private void Main_Load(object sender, EventArgs e)
         {
-            player.Play();
+            RefreshComboItems();
 
-            foreach (var pair in ExecList.data)
+            if (!File.Exists(ExecList.ExesListFilePath))
             {
-                comboBoxGame.Items.Add(pair.Key);
-            }
-
-            if (!File.Exists(ExecList.FilePath))
-            {
-                File.Create(ExecList.FilePath);
+                File.Create(ExecList.ExesListFilePath);
             }
         }
 
         private void SymbolRefresh_Click(object sender, EventArgs e)
         {
-            comboBoxGame.Items.Clear();
-
-            foreach (var pair in ExecList.data)
-            {
-                comboBoxGame.Items.Add(pair.Key);
-            }
+            RefreshComboItems();
 
             ClearAndFillIcons();
         }
@@ -140,6 +130,19 @@ namespace CustomGameLauncher
                 Icon icon = Icon.ExtractAssociatedIcon(filename);
                 Bitmap bitmapIcon = icon.ToBitmap();
                 icons.Add(bitmapIcon);
+            }
+        }
+
+        /// <summary>
+        /// Refreshes the Item in the main ComboBox
+        /// </summary>
+        private void RefreshComboItems()
+        {
+            comboBoxGame.Items.Clear();
+
+            foreach (var pair in ExecList.data)
+            {
+                comboBoxGame.Items.Add(pair.Key);
             }
         }
 
