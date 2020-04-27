@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
 using System.IO;
@@ -13,6 +14,7 @@ namespace CustomGameLauncher
         private int x = 2;
         private System.Media.SoundPlayer player;
         private ExecList listForm;
+        private Random random = new Random();
 
         private List<Bitmap> icons = new List<Bitmap>();
 
@@ -24,12 +26,10 @@ namespace CustomGameLauncher
 
             player = new System.Media.SoundPlayer(Properties.Resources.chiptune_1);
 
-            AppDomain.CurrentDomain.ProcessExit += CurrentDomain_ProcessExit;
-
             ClearAndFillIcons();
         }
 
-        private void timerTitle_Tick(object sender, EventArgs e)
+        private void TimerTitle_Tick(object sender, EventArgs e)
         {
             x++;
             switch(x)
@@ -50,17 +50,17 @@ namespace CustomGameLauncher
             }
         }
 
-        private void symbolHelp_Click(object sender, EventArgs e)
+        private void SymbolHelp_Click(object sender, EventArgs e)
         {
             MessageBox.Show("This application was coded by Davoleo AKA D36L" + Environment.NewLine + "Copyright - (c) - Davoleo - 2018-2020" + Environment.NewLine + Environment.NewLine + "Music Credits: Razor1911" + Environment.NewLine + Environment.NewLine + "Code and gfx: D36L", "Credits", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void comboBoxGame_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboBoxGame_SelectedIndexChanged(object sender, EventArgs e)
         {
             pictureIcon.Image = icons[comboBoxGame.SelectedIndex];
         }
 
-        private void btnQuadri1_Click(object sender, EventArgs e)
+        private void BtnQuadri1_Click(object sender, EventArgs e)
         {
             timerTitle.Stop();
             btnQuadri1.Enabled = false;
@@ -68,7 +68,7 @@ namespace CustomGameLauncher
             btnQuadri5.Enabled = true;
         }
 
-        private void btnQuadri5_Click(object sender, EventArgs e)
+        private void BtnQuadri5_Click(object sender, EventArgs e)
         {
             timerTitle.Start();
             btnQuadri5.Enabled = false;
@@ -76,12 +76,12 @@ namespace CustomGameLauncher
             btnQuadri1.Enabled = true;
         }
 
-        private void btnFiori_Click(object sender, EventArgs e)
+        private void BtnFiori_Click(object sender, EventArgs e)
         {
             listForm.Show();
         }
 
-        private void btnCuori_Click(object sender, EventArgs e)
+        private void BtnCuori_Click(object sender, EventArgs e)
         {
             player.Stop();
             btnCuori.Enabled = false;
@@ -89,7 +89,7 @@ namespace CustomGameLauncher
             btnCuori8.Enabled = true;
         }
 
-        private void btnCuori8_Click(object sender, EventArgs e)
+        private void BtnCuori8_Click(object sender, EventArgs e)
         {
             player.Play();
             btnCuori8.Enabled = false;
@@ -112,7 +112,7 @@ namespace CustomGameLauncher
             }
         }
 
-        private void symbolRefresh_Click(object sender, EventArgs e)
+        private void SymbolRefresh_Click(object sender, EventArgs e)
         {
             comboBoxGame.Items.Clear();
 
@@ -143,8 +143,16 @@ namespace CustomGameLauncher
             }
         }
 
-        private void CurrentDomain_ProcessExit(object sender, EventArgs e)
+        private void BtnLaunch_Click(object sender, EventArgs e)
         {
+            string filename = ExecList.data[(string) comboBoxGame.SelectedItem];
+            ProcessStartInfo processInfo = new ProcessStartInfo(filename);
+            Process.Start(processInfo);
+        }
+
+        private void btnRandom_Click(object sender, EventArgs e)
+        {
+            comboBoxGame.SelectedIndex = random.Next(comboBoxGame.Items.Count);
         }
     }
 }

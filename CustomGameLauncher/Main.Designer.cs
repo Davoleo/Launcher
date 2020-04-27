@@ -74,6 +74,7 @@
             this.btnRandom.Size = new System.Drawing.Size(90, 90);
             this.btnRandom.TabIndex = 2;
             this.btnRandom.UseVisualStyleBackColor = false;
+            this.btnRandom.Click += new System.EventHandler(this.btnRandom_Click);
             // 
             // symbolHelp
             // 
@@ -88,7 +89,7 @@
             this.symbolHelp.Symbol = "";
             this.symbolHelp.TabIndex = 4;
             this.symbolHelp.Text = "symbolBox1";
-            this.symbolHelp.Click += new System.EventHandler(this.symbolHelp_Click);
+            this.symbolHelp.Click += new System.EventHandler(this.SymbolHelp_Click);
             // 
             // btnLaunch
             // 
@@ -103,6 +104,7 @@
             this.btnLaunch.Size = new System.Drawing.Size(90, 90);
             this.btnLaunch.TabIndex = 5;
             this.btnLaunch.UseVisualStyleBackColor = false;
+            this.btnLaunch.Click += new System.EventHandler(this.BtnLaunch_Click);
             // 
             // pictureIcon
             // 
@@ -123,7 +125,7 @@
             this.btnQuadri1.Size = new System.Drawing.Size(65, 81);
             this.btnQuadri1.TabIndex = 8;
             this.btnQuadri1.UseVisualStyleBackColor = true;
-            this.btnQuadri1.Click += new System.EventHandler(this.btnQuadri1_Click);
+            this.btnQuadri1.Click += new System.EventHandler(this.BtnQuadri1_Click);
             // 
             // btnQuadri5
             // 
@@ -135,7 +137,7 @@
             this.btnQuadri5.Size = new System.Drawing.Size(65, 81);
             this.btnQuadri5.TabIndex = 9;
             this.btnQuadri5.UseVisualStyleBackColor = true;
-            this.btnQuadri5.Click += new System.EventHandler(this.btnQuadri5_Click);
+            this.btnQuadri5.Click += new System.EventHandler(this.BtnQuadri5_Click);
             // 
             // lblColor
             // 
@@ -169,7 +171,7 @@
             this.btnCuori8.Size = new System.Drawing.Size(65, 81);
             this.btnCuori8.TabIndex = 12;
             this.btnCuori8.UseVisualStyleBackColor = true;
-            this.btnCuori8.Click += new System.EventHandler(this.btnCuori8_Click);
+            this.btnCuori8.Click += new System.EventHandler(this.BtnCuori8_Click);
             // 
             // btnCuori
             // 
@@ -180,7 +182,7 @@
             this.btnCuori.Size = new System.Drawing.Size(65, 81);
             this.btnCuori.TabIndex = 13;
             this.btnCuori.UseVisualStyleBackColor = true;
-            this.btnCuori.Click += new System.EventHandler(this.btnCuori_Click);
+            this.btnCuori.Click += new System.EventHandler(this.BtnCuori_Click);
             // 
             // btnFiori
             // 
@@ -191,7 +193,7 @@
             this.btnFiori.Size = new System.Drawing.Size(65, 81);
             this.btnFiori.TabIndex = 15;
             this.btnFiori.UseVisualStyleBackColor = true;
-            this.btnFiori.Click += new System.EventHandler(this.btnFiori_Click);
+            this.btnFiori.Click += new System.EventHandler(this.BtnFiori_Click);
             // 
             // lblAddGame
             // 
@@ -221,7 +223,7 @@
             // 
             this.timerTitle.Enabled = true;
             this.timerTitle.Interval = 500;
-            this.timerTitle.Tick += new System.EventHandler(this.timerTitle_Tick);
+            this.timerTitle.Tick += new System.EventHandler(this.TimerTitle_Tick);
             // 
             // symbolRefresh
             // 
@@ -236,7 +238,7 @@
             this.symbolRefresh.Symbol = "";
             this.symbolRefresh.TabIndex = 18;
             this.symbolRefresh.Text = "symbolBox1";
-            this.symbolRefresh.Click += new System.EventHandler(this.symbolRefresh_Click);
+            this.symbolRefresh.Click += new System.EventHandler(this.SymbolRefresh_Click);
             // 
             // comboBoxGame
             // 
@@ -245,7 +247,7 @@
             this.comboBoxGame.Name = "comboBoxGame";
             this.comboBoxGame.Size = new System.Drawing.Size(289, 21);
             this.comboBoxGame.TabIndex = 19;
-            this.comboBoxGame.SelectedIndexChanged += new System.EventHandler(this.comboBoxGame_SelectedIndexChanged);
+            this.comboBoxGame.SelectedIndexChanged += new System.EventHandler(this.ComboBoxGame_SelectedIndexChanged);
             // 
             // Main
             // 
