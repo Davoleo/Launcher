@@ -143,5 +143,10 @@ namespace CustomGameLauncher
             Hide();
             e.Cancel = true;
         }
+
+        private void ExecList_Load(object sender, EventArgs e)
+        {
+            BackgroundImage = Application.OpenForms[0].BackgroundImage; 
+        }
     }
 }

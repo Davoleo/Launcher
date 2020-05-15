@@ -45,19 +45,21 @@
             // 
             // listNames
             // 
+            this.listNames.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listNames.FormattingEnabled = true;
             this.listNames.Location = new System.Drawing.Point(7, 6);
             this.listNames.Name = "listNames";
-            this.listNames.Size = new System.Drawing.Size(192, 277);
+            this.listNames.Size = new System.Drawing.Size(192, 273);
             this.listNames.TabIndex = 1;
             this.listNames.SelectedIndexChanged += new System.EventHandler(this.ListGames_SelectedIndexChanged);
             // 
             // listPaths
             // 
+            this.listPaths.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listPaths.FormattingEnabled = true;
             this.listPaths.Location = new System.Drawing.Point(205, 6);
             this.listPaths.Name = "listPaths";
-            this.listPaths.Size = new System.Drawing.Size(214, 277);
+            this.listPaths.Size = new System.Drawing.Size(214, 273);
             this.listPaths.TabIndex = 2;
             this.listPaths.SelectedIndexChanged += new System.EventHandler(this.listPaths_SelectedIndexChanged);
             // 
@@ -167,9 +169,12 @@
             this.Controls.Add(this.listPaths);
             this.Controls.Add(this.listNames);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.MaximizeBox = false;
             this.Name = "ExecList";
+            this.ShowIcon = false;
             this.Text = "ExecList";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ExecList_FormClosing);
+            this.Load += new System.EventHandler(this.ExecList_Load);
             this.panelTools.ResumeLayout(false);
             this.panelTools.PerformLayout();
             this.ResumeLayout(false);
